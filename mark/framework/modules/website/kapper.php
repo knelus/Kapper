@@ -5,7 +5,6 @@ class M_kapper extends Controller
 		$query = $this -> db -> getTable("behandeling");
 		$layout = new layout("kapper/mogelijkheden");
 		$layout -> assign("mogelijkheden", $query -> getAll());
-		//$layout = -> assign("mogelijkheden", $query -> getAll());
 		out($layout -> draw());
 	}
 	

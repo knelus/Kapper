@@ -7,6 +7,15 @@ $(document).ready(function(){
 </script>
 <h2>Waar wilt u zich knippen?</h2> <br />
 
+Beschikbare Plaatse <br />
+<form name="input" action="index.php" method="get">
+<select name="lijstPlaatsen" size="4">
+[foreach|plaats;val]
+	<option value="">[val,plaats]</option>
+[/foreach]
+</select>
+</form>
+
 Vul uw plaats in waar u geknipt wil worden: <br />
 <form name="input"action="index.php" method="get">
 Plaats: <input type="text" name="plaats" />
