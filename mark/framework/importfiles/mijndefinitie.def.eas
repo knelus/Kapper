@@ -1,0 +1,28 @@
+{"columns":
+	{	
+		"1":{
+			"viewOrder":"1",
+			"importOrder":"1",
+			"name":"cell1",
+			"type":"string"
+		},
+		"2":{
+			"viewOrder":"2",
+			"importOrder":"2",
+			"name":"cell2",
+			"type":"string",
+			"primary":"1"
+		}
+			
+	},
+"colors":
+	{
+		"1":"#fff",
+		"2":"#ffa"
+	},
+	
+"info":
+	{
+		"name":"testTabel"	
+	}
+}

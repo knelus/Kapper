@@ -1,0 +1,2 @@
+<a href="<?php echo $this->url->make("codes","beheerCodes",$id.",".$naam); ?>"><img src="<?php echo $path; ?>images/buttons/codesBeheren.png" /></a>
+<a href="<?php echo $this->url->make("","eigenTabellen"); ?>"><img src="<?php echo $path; ?>images/buttons/terug.png" /></a>

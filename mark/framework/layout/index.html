@@ -1,0 +1,45 @@
+<script type="text/javascript">
+$(document).ready(function(){
+	if(){
+	$('#kapsalon').hide();
+	}
+});
+</script>
+<h2>Waar wilt u zich knippen?</h2> <br />
+
+Vul uw plaats in waar u geknipt wil worden: <br />
+<form name="input"action="index.php" method="get">
+Plaats: <input type="text" name="plaats" />
+<input type="submit" value="Verder" onclick="hide();" />
+</form>
+
+Selecteer Kapsalon:<br />
+<form method="get" action='index.php' name='kapsalon'>
+<select name="kapsalon" size="2">
+[foreach|kapsalon;val]
+	<option value="[val,kapsalonId]">[val,naam]</option>
+[/foreach]
+</select>
+<input type="submit"/>
+</form>
+
+Selecteer Behandeling
+<form method="get" action="index.php" name="behandeling" >
+<select name="behandeling" size="2">
+[foreach|behandeling;val]
+	<option value="[val,naam]">[val,naam]</option>
+[/foreach]
+</select>
+<input type="submit"/>
+</form>
+
+Selecteer Kapper:<br />
+<form method="get" action='index.php' name='kapper' id="kapper">
+<select name="kapper" size="2">
+[foreach|kapper;val]
+	<option value="[val,kapperId]">[val,naam]</option>
+[/foreach]
+</select>
+<input type="submit"/>
+</form>
+

@@ -1,0 +1,7 @@
+RewriteEngine on
+RewriteCond %{HTTP_REFERER} ^
+
+RewriteRule ^spaw(.*).html$ spaw$1.htm
+RewriteRule ^(.*).html$ /mark/framework/index.php?rule=$1&ext=html
+RewriteRule ^spaw(.*).htm$ spaw$1.html
+RewriteRule ^(.*)ajax$ /mark/framework/ajax.php

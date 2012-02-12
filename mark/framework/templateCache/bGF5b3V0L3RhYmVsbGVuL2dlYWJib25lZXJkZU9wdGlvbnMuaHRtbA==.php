@@ -1,0 +1,1 @@
+<a href="<?php echo $this->url->make("","geabboneerdeTabellen"); ?>"><img src="<?php echo $path; ?>images/buttons/terug.png" /></a>

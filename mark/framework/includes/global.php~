@@ -1,0 +1,26 @@
+<?php
+//basic configuration
+$config['sql']['host']="localhost";
+$config['sql']['user']="root";
+$config['sql']['pass']="";
+$config['sql']['name']="groepwerk";
+$config['email']["from"]="call-in.agent@pricon.nl";
+$config['email']["report"]="call-center.reports@pricon.nl";
+$config['parse_layout']=true;
+
+
+//includes
+include("includes/error.class.php");
+include("includes/sql.class.php");
+include("includes/output.class.php");
+include("includes/layout.class.php");
+include("includes/wissel.class.php");
+include("includes/functions.php");
+include("includes/components.php");
+include("includes/zoeken.class.php");
+include("includes/mysql_fix.php");
+
+
+
+
+?>

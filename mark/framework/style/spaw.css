@@ -1,0 +1,43 @@
+h1 {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 14pt;
+	font-variant: small-caps;
+	text-transform: uppercase;
+	color: #0B5AFC;
+
+	font-weight: bold;
+}
+
+h2{
+	font-family:verdana,arial,Helvetica,sans-serif;
+	font-size:11pt;
+	color:#ff0000;
+	font-weight:bold;
+	margin:0px;
+}
+
+h3{
+	font-family:verdana,arial,Helvetica,sans-serif;
+	font-size:12pt;
+	font-weight:bold;
+	margin:0px;
+}
+
+body,td{
+	font-family:verdana,arial,Helvetica,sans-serif;
+	font-size:10pt;
+	background-color:white;
+}
+h4{
+	font-family:verdana,arial,Helvetica,sans-serif;
+	font-size:8pt;
+	color:#aaa;
+
+}
+
+
+ul { list-style-image: url("../images/streep.gif"); }
+
+ul ul{
+	list-style-image:none;
+}

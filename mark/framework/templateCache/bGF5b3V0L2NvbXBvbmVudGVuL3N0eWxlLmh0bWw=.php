@@ -1,0 +1,1 @@
+<LINK HREF="<?php echo $path; ?>style/<?php echo $file; ?>.css" TYPE="text/css" REL="stylesheet"> 

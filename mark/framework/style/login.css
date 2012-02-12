@@ -1,0 +1,43 @@
+body{
+	height:100%;
+	overflow:hidden;
+	background-color:#ccccff;
+		margin:0px;
+	overflow:hidden;
+	background-color:#00050c;
+	font-family:verdana,arial,Helvetica,sans-serif;
+	font-size:10pt;
+	background-image:url(../images/background.jpg);
+	background-repeat:no-repeat;
+}
+
+
+
+.container{
+height:100%;
+top:50%;
+position:relative;
+margin-top:-100px;
+}
+.venster{
+	width:400px;
+	height:150px;
+	background-color:white;
+	border:1px solid black;	
+	left:50%;
+	margin-left:-200px;
+	position:relative;
+	padding:3px;
+}
+
+.venster h1{
+	font-size:15px;
+	border-bottom:1px solid black;
+	margin:0px;
+}
+
+label{
+	display:block;
+	float:left;
+	width:150px;
+}
