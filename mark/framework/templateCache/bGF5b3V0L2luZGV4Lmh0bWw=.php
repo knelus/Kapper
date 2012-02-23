@@ -1,12 +1,9 @@
 <script type="text/javascript">
-$(document).ready(function(){
-	if(){
-	$('#kapsalon').hide();
-	}
-});
+
 </script>
 <h2>Waar wilt u zich knippen?</h2> <br />
 
+<!--
 Beschikbare Plaatse <br />
 <form name="input" action="index.php" method="get">
 <select name="lijstPlaatsen" size="4">
@@ -15,15 +12,17 @@ Beschikbare Plaatse <br />
 <?php }} ?>
 </select>
 </form>
+-->
 
 Vul uw plaats in waar u geknipt wil worden: <br />
-<form name="input"action="index.php" method="get">
+<form name="input"action="index.php" method="post">
 Plaats: <input type="text" name="plaats" />
 <input type="submit" value="Verder" onclick="hide();" />
 </form>
 
 Selecteer Kapsalon:<br />
-<form method="get" action='index.php' name='kapsalon'>
+<form method="post" action="index.php" name="kapsalon">
+<input type="hidden" value="<?php echo $plaatsSelected; ?>" name="plaats"/>
 <select name="kapsalon" size="2">
 <?php if(is_array($kapsalon)){foreach($kapsalon as $val){ ?>
 	<option value="<?php echo $val["kapsalonId"]; ?>"><?php echo $val["naam"]; ?></option>
@@ -33,22 +32,36 @@ Selecteer Kapsalon:<br />
 </form>
 
 Selecteer Behandeling
-<form method="get" action="index.php" name="behandeling" >
+<form method="post" action="index.php" name="behandeling" >
+<input type="hidden" value="<?php echo $plaatsSelected; ?>" name="plaatsSelected"/>
+<input type="hidden" value="<?php echo $kapsalonSelected; ?>" name="kapsalonSelected"/>
 <select name="behandeling" size="2">
 <?php if(is_array($behandeling)){foreach($behandeling as $val){ ?>
-	<option value="<?php echo $val["naam"]; ?>"><?php echo $val["naam"]; ?></option>
+	<option value="<?php echo $val["0"]["behandelingId"]; ?>"><?php echo $val["0"]["naam"]; ?></option>
 <?php }} ?>
 </select>
 <input type="submit"/>
 </form>
 
 Selecteer Kapper:<br />
-<form method="get" action='index.php' name='kapper' id="kapper">
+<form method="post" action="index.php" name="kapper" >
+<input type="hidden" value="<?php echo $plaatsSelected; ?>" name="plaatsSelected"/>
+<input type="hidden" value="<?php echo $kapsalonSelected; ?>" name="kapsalonSelected"/>
+<input type="hidden" value="<?php echo $behandelingSelected; ?>" name="behandelingSelected"/>
 <select name="kapper" size="2">
 <?php if(is_array($kapper)){foreach($kapper as $val){ ?>
-	<option value="<?php echo $val["kapperId"]; ?>"><?php echo $val["naam"]; ?></option>
+	<option value="<?php echo $val["0"]["naam"]; ?>"><?php echo $val["0"]["naam"]; ?></option>
 <?php }} ?>
 </select>
-<input type="submit"/>
+<input type="submit" id="volForm"/>
 </form>
 
+<div id="dataReservation">
+<?php echo $plaatsSelected; ?><br />
+<?php if(is_array($kapsalonName)){foreach($kapsalonName as $val){ ?>
+<?php echo $val["naam"]; ?><br />
+<?php }} ?>
+<?php if(is_array($behandelingName)){foreach($behandelingName as $val){ ?>
+<?php echo $val["naam"]; ?><br />
+<?php }} ?>
+</div>

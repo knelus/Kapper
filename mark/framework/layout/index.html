@@ -1,12 +1,9 @@
 <script type="text/javascript">
-$(document).ready(function(){
-	if(){
-	$('#kapsalon').hide();
-	}
-});
+
 </script>
 <h2>Waar wilt u zich knippen?</h2> <br />
 
+<!--
 Beschikbare Plaatse <br />
 <form name="input" action="index.php" method="get">
 <select name="lijstPlaatsen" size="4">
@@ -15,15 +12,17 @@ Beschikbare Plaatse <br />
 [/foreach]
 </select>
 </form>
+-->
 
 Vul uw plaats in waar u geknipt wil worden: <br />
-<form name="input"action="index.php" method="get">
+<form name="input"action="index.php" method="post">
 Plaats: <input type="text" name="plaats" />
 <input type="submit" value="Verder" onclick="hide();" />
 </form>
 
 Selecteer Kapsalon:<br />
-<form method="get" action='index.php' name='kapsalon'>
+<form method="post" action="index.php" name="kapsalon">
+<input type="hidden" value="[plaatsSelected]" name="plaats"/>
 <select name="kapsalon" size="2">
 [foreach|kapsalon;val]
 	<option value="[val,kapsalonId]">[val,naam]</option>
@@ -33,22 +32,36 @@ Selecteer Kapsalon:<br />
 </form>
 
 Selecteer Behandeling
-<form method="get" action="index.php" name="behandeling" >
+<form method="post" action="index.php" name="behandeling" >
+<input type="hidden" value="[plaatsSelected]" name="plaatsSelected"/>
+<input type="hidden" value="[kapsalonSelected]" name="kapsalonSelected"/>
 <select name="behandeling" size="2">
 [foreach|behandeling;val]
-	<option value="[val,naam]">[val,naam]</option>
+	<option value="[val,0,behandelingId]">[val,0,naam]</option>
 [/foreach]
 </select>
 <input type="submit"/>
 </form>
 
 Selecteer Kapper:<br />
-<form method="get" action='index.php' name='kapper' id="kapper">
+<form method="post" action="index.php" name="kapper" >
+<input type="hidden" value="[plaatsSelected]" name="plaatsSelected"/>
+<input type="hidden" value="[kapsalonSelected]" name="kapsalonSelected"/>
+<input type="hidden" value="[behandelingSelected]" name="behandelingSelected"/>
 <select name="kapper" size="2">
 [foreach|kapper;val]
-	<option value="[val,kapperId]">[val,naam]</option>
+	<option value="[val,0,naam]">[val,0,naam]</option>
 [/foreach]
 </select>
-<input type="submit"/>
+<input type="submit" id="volForm"/>
 </form>
 
+<div id="dataReservation">
+[plaatsSelected]<br />
+[foreach|kapsalonName;val]
+[val,naam]<br />
+[/foreach]
+[foreach|behandelingName;val]
+[val,naam]<br />
+[/foreach]
+</div>
